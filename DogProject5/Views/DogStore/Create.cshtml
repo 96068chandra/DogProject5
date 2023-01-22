@@ -1,0 +1,56 @@
+﻿@model DogProject5.Models.AddDogViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5 border rounded-2 p-3">
+        <div class="display-6">Create New Account</div>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <div class="mb-2">
+                @Html.LabelFor(p => p.Name, new { @class = "form-label" })
+                @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Name)
+            </div>
+            <div class="mb-2">
+                @Html.LabelFor(p => p.Description, new { @class = "form-label" })
+                @Html.TextBoxFor(p => p.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Description)
+            </div>
+            <div class="mb-2">
+                @Html.LabelFor(p => p.Weight, new { @class = "form-label" })
+                @Html.TextBoxFor(p => p.Weight, new { @class = "form-control"})
+                @Html.ValidationMessageFor(p => p.Weight)
+            </div>
+            <div class="mb-2">
+                @Html.LabelFor(p => p.Height, new { @class = "form-label" })
+                @Html.TextBoxFor(p => p.Height, new { @class = "form-control"})
+                @Html.ValidationMessageFor(p => p.Height)
+            </div>
+            <div class="mb-2">
+                @Html.LabelFor(p => p.Age, new { @class = "form-label" })
+                @Html.TextBoxFor(p => p.Age, new { @class = "form-control"})
+                @Html.ValidationMessageFor(p => p.Age)
+            </div>
+
+            <div class="mb-2">
+                @Html.LabelFor(p => p.Breed, new { @class = "form-label" })
+                @Html.DropDownListFor(p => p.Breed, new SelectList(Model.Breed, "Id", "BreedName"), "--Select", new { @class = "form-select" })
+                @Html.ValidationMessageFor(p => p.Breed)
+            </div>
+            <div class="mt-2">
+                <input type="submit" id="btnSubmit" class="btn btn-primary" value="Create" />
+                
+            </div>
+        }
+    </div>
+</div>
+
