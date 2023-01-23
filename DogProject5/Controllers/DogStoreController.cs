@@ -39,6 +39,28 @@ namespace infinite.mvc.dogstore.test.Controllers
             return HttpNotFound();
 
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            var breed = _context.Breeds.ToList();
+            ViewBag.Breed = breed;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(DogStore dogStore)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.DogStores.Add(dogStore);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            var breed=_context.Breeds.ToList();
+            ViewBag.Breed = breed;
+            return View();
+        }
 
 
         public ActionResult Edit(int id)

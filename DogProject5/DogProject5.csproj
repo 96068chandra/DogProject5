@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202301221452112_IntialMigration.designer.cs">
       <DependentUpon>202301221452112_IntialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301221729513_Test.cs" />
+    <Compile Include="Migrations\202301221729513_Test.designer.cs">
+      <DependentUpon>202301221729513_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Breed.cs" />
@@ -202,6 +206,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301221452112_IntialMigration.resx">
       <DependentUpon>202301221452112_IntialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301221729513_Test.resx">
+      <DependentUpon>202301221729513_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
